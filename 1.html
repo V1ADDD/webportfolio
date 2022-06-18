@@ -3,6 +3,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <head>
 	<title></title>
+	<script src=
+        "https://code.jquery.com/jquery-3.4.1.min.js">
+    </script>
+	<script type="text/javascript">
+		function alld(id) {
+			var top = document.getElementById(id).getBoundingClientRect().top;
+			$('body, html').animate({scrollTop: top-100}, 1600); // плавно переходим к блоку
+			$('body, html').animate({scrollTop: top-20}, 1600); 
+		};
+	</script>
 	<!-- Bootstrap CSS (jsDelivr CDN) -->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
@@ -11,20 +21,20 @@
 	<div class="fixed-top">
 		<nav class="navbar navbar-expand-lg" style="background-color:rgba(0, 0, 0, 0.5); color: white;">
 			<div class="container-fluid" style="font-size:x-large;">
-				<a class="navbar-brand" href="#" style="color: white; font-size: 40px; margin-left:50px">Rusak</a>
+				<a class="navbar-brand" href="#" onclick="alld('carouselExampleDark')" style="color: white; font-size: 40px; margin-left:50px">Rusak</a>
 				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation" style="border-color: white; color: white;">
 				<span class="navbar-toggler-icon"></span>
 				</button>
 				<div class="collapse navbar-collapse" id="navbarText">
 				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 					<li class="nav-item" style="margin-left: 50px">
-					<a class="nav-link active" id="aa1" onmouseleave="document.getElementById('aa1').style.color= 'rgba(255, 255, 255, 0.4)'" onmouseenter="document.getElementById('aa1').style.color='white'" aria-current="page" href="#" style="color: rgba(255, 255, 255, 0.4)">About</a>
+					<a class="nav-link active" id="aa1" onclick="alld('carouselExampleDark1')" onmouseleave="document.getElementById('aa1').style.color= 'rgba(255, 255, 255, 0.4)'" onmouseenter="document.getElementById('aa1').style.color='white'" aria-current="page" href="#" style="color: rgba(255, 255, 255, 0.4)">About</a>
 					</li>
 					<li class="nav-item" style="margin-left: 50px">
-					<a class="nav-link" href="#" id="aa2" onmouseleave="document.getElementById('aa2').style.color= 'rgba(255, 255, 255, 0.4)'" onmouseenter="document.getElementById('aa2').style.color='white'" aria-current="page" href="#" style="color: rgba(255, 255, 255, 0.4)" style="color: rgba(255, 255, 255, 0.4)">Examples</a>
+					<a class="nav-link" href="#" id="aa2" onclick="alld('carouselExampleDark2')" onmouseleave="document.getElementById('aa2').style.color= 'rgba(255, 255, 255, 0.4)'" onmouseenter="document.getElementById('aa2').style.color='white'" aria-current="page" href="#" style="color: rgba(255, 255, 255, 0.4)" style="color: rgba(255, 255, 255, 0.4)">Examples</a>
 					</li>
 					<li class="nav-item" style="margin-left: 50px">
-					<a class="nav-link" href="#" id="aa3" onmouseleave="document.getElementById('aa3').style.color= 'rgba(255, 255, 255, 0.4)'" onmouseenter="document.getElementById('aa3').style.color='white'" aria-current="page" href="#" style="color: rgba(255, 255, 255, 0.4)" style="color: rgba(255, 255, 255, 0.4)">Say hi!</a>
+					<a class="nav-link" href="#" id="aa3" onclick="alld('carouselExampleDark3')" onmouseleave="document.getElementById('aa3').style.color= 'rgba(255, 255, 255, 0.4)'" onmouseenter="document.getElementById('aa3').style.color='white'" aria-current="page" href="#" style="color: rgba(255, 255, 255, 0.4)" style="color: rgba(255, 255, 255, 0.4)">Say hi!</a>
 					</li>
 				</ul>
 				</div>
@@ -65,7 +75,13 @@
 		  </div>
 		</div>
 	</div>
-	<div id="carouselExampleDark1" class="carousel carousel-dark slide" data-bs-ride="carousel" style="height: 70%; width:70%; margin-left:15%; margin-right: 15%; margin-top: 15%; margin-bottom: 15%;">
+
+	<div id="carouselExampleDark1" class="carousel carousel-dark slide" data-bs-ride="carousel" style="height: 70%; width:70%; margin-bottom: 5%; margin-left:15%; margin-right: 15%;">
+		<div style="margin-top: 2%; font-size: 10vh; margin-bottom: 2%; margin-left: -5%;">
+			<center>
+				About
+			</center>
+		</div>
 		<div class="carousel-indicators">
 		  <button type="button" data-bs-target="#carouselExampleDark1" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
 		  <button type="button" data-bs-target="#carouselExampleDark1" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -108,6 +124,112 @@
 			<span class="visually-hidden">Previous</span>
 		</button>
 		<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark1" data-bs-slide="next" style="margin-right: -4%;">
+			<span class="carousel-control-next-icon" aria-hidden="true"></span>
+			<span class="visually-hidden">Next</span>
+		</button>
+	</div>
+
+	<div id="carouselExampleDark2" class="carousel carousel-dark slide" data-bs-ride="carousel" style="height: 70%; width:70%; margin-bottom: 5%; margin-left:15%; margin-right: 15%;">
+		<div style="margin-top: 2%; font-size: 10vh; margin-bottom: 2%; margin-left: -5%;">
+			<center>
+				Examples
+			</center>
+		</div>
+		<div class="carousel-indicators">
+		  <button type="button" data-bs-target="#carouselExampleDark2" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+		  <button type="button" data-bs-target="#carouselExampleDark2" data-bs-slide-to="1" aria-label="Slide 2"></button>
+		  <button type="button" data-bs-target="#carouselExampleDark2" data-bs-slide-to="2" aria-label="Slide 3"></button>
+		</div>
+		<div class="carousel-inner">
+		  <div class="carousel-item active" data-bs-interval="5000">
+			<img src="5.jpg" class="d-block w-100" alt="1" style=" border-radius: 50px; height: 70vh">
+			<div class="carousel-caption d-none d-md-block" style="margin-left: -30%; margin-top: 50%; margin-bottom: 10%; background:linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));">
+				<h1 style="color: white; margin-left: -45%; font-size: 50px;">Skills</h1>
+				<p style="color: white; margin-left: -45%; margin-top: 3%; font-size: 30px;">- Python</p>
+				<p style="color: white; margin-left: -24.5%; font-size: 30px;">- C#, Visual Studio, Unity 3D</p>
+				<p style="color: white; margin-left: -15%; font-size: 30px;">- C++, Visual Studio, Unreal Engine 4</p>
+				<p style="color: white; margin-left: -24.8%; font-size: 30px;">- HTML, CSS, JS, BootStrap</p>
+			</div>
+		  </div>
+		  <div class="carousel-item" data-bs-interval="5000">
+			<img src="4.jpg" class="d-block w-100" alt="2" style="border-radius: 50px; height: 70vh">
+			<div class="carousel-caption d-none d-md-block" style="margin-left: -30%; margin-top: 50%; margin-bottom: 10%; background:linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));">
+				<h1 style="color: white; margin-left: -22%; font-size: 50px;">Foreign languages</h1>
+				<p style="color: white; margin-left: -39.5%; margin-top: 3%; font-size: 30px;">- English (B2)</p>
+				<p style="color: white; margin-left: -40.2%; font-size: 30px;">- Polish (B1)</p>
+				<p style="color: white; margin-left: -33.8%; font-size: 30px;">- Russian (Native)</p>
+				<p style="color: white; margin-left: -30.5%; font-size: 30px;">- Belarusian (Native)</p>
+			</div>
+		  </div>
+		  <div class="carousel-item" data-bs-interval="5000">
+			<img src="6.jpg" class="d-block w-100" alt="3" style="border-radius: 50px; height: 70vh">
+			<div class="carousel-caption d-none d-md-block" style="margin-left: -30%; margin-top: 50%; margin-bottom: 10%; background:linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));">
+				<h1 style="color: white; margin-left: -28%; font-size: 50px;">Character traits</h1>
+				<p style="color: white; margin-left: -39%; margin-top: 3%; font-size: 30px;">- Hardworking</p>
+				<p style="color: white; margin-left: -40%; font-size: 30px;">- Fast learner</p>
+				<p style="color: white; margin-left: -40%; font-size: 30px;">- Easy going</p>
+				<p style="color: white; margin-left: -38.5%; font-size: 30px;">- Easy learner</p>
+			</div>
+		  </div>
+		</div>
+		<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark2" data-bs-slide="prev" style="margin-left: -4%;">
+			<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+			<span class="visually-hidden">Previous</span>
+		</button>
+		<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark2" data-bs-slide="next" style="margin-right: -4%;">
+			<span class="carousel-control-next-icon" aria-hidden="true"></span>
+			<span class="visually-hidden">Next</span>
+		</button>
+	</div>
+
+	<div id="carouselExampleDark3" class="carousel carousel-dark slide" data-bs-ride="carousel" style="height: 70%; width:70%; margin-bottom: 5%; margin-left:15%; margin-right: 15%;">
+		<div style="margin-top: 2%; font-size: 10vh; margin-bottom: 2%; margin-left: -5%;">
+			<center>
+				Say Hi!
+			</center>
+		</div>
+		<div class="carousel-indicators">
+		  <button type="button" data-bs-target="#carouselExampleDark3" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+		  <button type="button" data-bs-target="#carouselExampleDark3" data-bs-slide-to="1" aria-label="Slide 2"></button>
+		  <button type="button" data-bs-target="#carouselExampleDark3" data-bs-slide-to="2" aria-label="Slide 3"></button>
+		</div>
+		<div class="carousel-inner">
+		  <div class="carousel-item active" data-bs-interval="5000">
+			<img src="5.jpg" class="d-block w-100" alt="1" style=" border-radius: 50px; height: 70vh">
+			<div class="carousel-caption d-none d-md-block" style="margin-left: -30%; margin-top: 50%; margin-bottom: 10%; background:linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));">
+				<h1 style="color: white; margin-left: -45%; font-size: 50px;">Skills</h1>
+				<p style="color: white; margin-left: -45%; margin-top: 3%; font-size: 30px;">- Python</p>
+				<p style="color: white; margin-left: -24.5%; font-size: 30px;">- C#, Visual Studio, Unity 3D</p>
+				<p style="color: white; margin-left: -15%; font-size: 30px;">- C++, Visual Studio, Unreal Engine 4</p>
+				<p style="color: white; margin-left: -24.8%; font-size: 30px;">- HTML, CSS, JS, BootStrap</p>
+			</div>
+		  </div>
+		  <div class="carousel-item" data-bs-interval="5000">
+			<img src="4.jpg" class="d-block w-100" alt="2" style="border-radius: 50px; height: 70vh">
+			<div class="carousel-caption d-none d-md-block" style="margin-left: -30%; margin-top: 50%; margin-bottom: 10%; background:linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));">
+				<h1 style="color: white; margin-left: -22%; font-size: 50px;">Foreign languages</h1>
+				<p style="color: white; margin-left: -39.5%; margin-top: 3%; font-size: 30px;">- English (B2)</p>
+				<p style="color: white; margin-left: -40.2%; font-size: 30px;">- Polish (B1)</p>
+				<p style="color: white; margin-left: -33.8%; font-size: 30px;">- Russian (Native)</p>
+				<p style="color: white; margin-left: -30.5%; font-size: 30px;">- Belarusian (Native)</p>
+			</div>
+		  </div>
+		  <div class="carousel-item" data-bs-interval="5000">
+			<img src="6.jpg" class="d-block w-100" alt="3" style="border-radius: 50px; height: 70vh">
+			<div class="carousel-caption d-none d-md-block" style="margin-left: -30%; margin-top: 50%; margin-bottom: 10%; background:linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));">
+				<h1 style="color: white; margin-left: -28%; font-size: 50px;">Character traits</h1>
+				<p style="color: white; margin-left: -39%; margin-top: 3%; font-size: 30px;">- Hardworking</p>
+				<p style="color: white; margin-left: -40%; font-size: 30px;">- Fast learner</p>
+				<p style="color: white; margin-left: -40%; font-size: 30px;">- Easy going</p>
+				<p style="color: white; margin-left: -38.5%; font-size: 30px;">- Easy learner</p>
+			</div>
+		  </div>
+		</div>
+		<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark3" data-bs-slide="prev" style="margin-left: -4%;">
+			<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+			<span class="visually-hidden">Previous</span>
+		</button>
+		<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark3" data-bs-slide="next" style="margin-right: -4%;">
 			<span class="carousel-control-next-icon" aria-hidden="true"></span>
 			<span class="visually-hidden">Next</span>
 		</button>
