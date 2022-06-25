@@ -9,7 +9,8 @@
     </script>
 	<script type="text/javascript">
 		function alld(id) {
-			var top = document.getElementById(id).getBoundingClientRect().top;
+			var top = document.getElementById(id).getBoundingClientRect().top + window.pageYOffset;
+			
 			$('body, html').animate({scrollTop: top}, 1600); // плавно переходим к блоку
 		};
 	</script>
@@ -34,24 +35,24 @@
 </head>
 <body>
 	<div class="fixed-top">
-		<nav class="navbar navbar-expand-lg" style="background-color:rgba(0, 0, 0, 0.5); color: white;">
+		<nav class="navbar navbar-expand-lg" style="background:linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0)); color: white;">
 			<div class="container-fluid" style="font-size:x-large;">
 				<a class="navbar-brand" href="#" onclick="alld('carouselExampleDark')" style="color: white; font-size: 40px; margin-left:50px">Rusak</a>
 				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation" style="border-color: white; color: white;">
-				<span class="navbar-toggler-icon"></span>
+					<span class="navbar-toggler-icon"></span>
 				</button>
 				<div class="collapse navbar-collapse" id="navbarText">
-				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-					<li class="nav-item" style="margin-left: 50px">
-					<a class="nav-link active" id="aa1" onclick="alld('carouselExampleDark1')" onmouseleave="document.getElementById('aa1').style.color= 'rgba(255, 255, 255, 0.4)'" onmouseenter="document.getElementById('aa1').style.color='white'" aria-current="page" href="#" style="color: rgba(255, 255, 255, 0.4)">About</a>
-					</li>
-					<li class="nav-item" style="margin-left: 50px">
-					<a class="nav-link" href="#" id="aa2" onclick="alld('carouselExampleDark2')" onmouseleave="document.getElementById('aa2').style.color= 'rgba(255, 255, 255, 0.4)'" onmouseenter="document.getElementById('aa2').style.color='white'" aria-current="page" href="#" style="color: rgba(255, 255, 255, 0.4)" style="color: rgba(255, 255, 255, 0.4)">Examples</a>
-					</li>
-					<li class="nav-item" style="margin-left: 50px">
-					<a class="nav-link" href="#" id="aa3" onclick="alld('carouselExampleDark3')" onmouseleave="document.getElementById('aa3').style.color= 'rgba(255, 255, 255, 0.4)'" onmouseenter="document.getElementById('aa3').style.color='white'" aria-current="page" href="#" style="color: rgba(255, 255, 255, 0.4)" style="color: rgba(255, 255, 255, 0.4)">Say hi!</a>
-					</li>
-				</ul>
+					<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+						<li class="nav-item" style="margin-left: 50px">
+							<a class="nav-link active" id="aa1" onclick="alld('carouselExampleDark1')" onmouseleave="document.getElementById('aa1').style.color= 'rgba(255, 255, 255, 0.4)'" onmouseenter="document.getElementById('aa1').style.color='white'" aria-current="page" href="#" style="color: rgba(255, 255, 255, 0.4)">About</a>
+						</li>
+						<li class="nav-item" style="margin-left: 50px">
+							<a class="nav-link" href="#" id="aa2" onclick="alld('carouselExampleDark2')" onmouseleave="document.getElementById('aa2').style.color= 'rgba(255, 255, 255, 0.4)'" onmouseenter="document.getElementById('aa2').style.color='white'" aria-current="page" href="#" style="color: rgba(255, 255, 255, 0.4)" style="color: rgba(255, 255, 255, 0.4)">Examples</a>
+						</li>
+						<li class="nav-item" style="margin-left: 50px">
+							<a class="nav-link" href="#" id="aa3" onclick="alld('carouselExampleDark3')" onmouseleave="document.getElementById('aa3').style.color= 'rgba(255, 255, 255, 0.4)'" onmouseenter="document.getElementById('aa3').style.color='white'" aria-current="page" href="#" style="color: rgba(255, 255, 255, 0.4)" style="color: rgba(255, 255, 255, 0.4)">Say hi!</a>
+						</li>
+					</ul>
 				</div>
 			</div>
 		</nav>
@@ -135,12 +136,8 @@
 		  </div>
 		</div>
 		<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark1" data-bs-slide="prev" style="margin-left: -4%;">
-			<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-			<span class="visually-hidden">Previous</span>
 		</button>
 		<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark1" data-bs-slide="next" style="margin-right: -4%;">
-			<span class="carousel-control-next-icon" aria-hidden="true"></span>
-			<span class="visually-hidden">Next</span>
 		</button>
 	</div>
 
@@ -157,43 +154,36 @@
 		</div>
 		<div class="carousel-inner">
 		  <div class="carousel-item active" data-bs-interval="5000">
-			<img src="5.jpg" class="d-block w-100" alt="1" style=" border-radius: 50px; height: 70vh">
+			<img src="7.jpg" class="d-block w-100" alt="1" style=" border-radius: 50px; height: 70vh">
 			<div class="carousel-caption d-none d-md-block" style="margin-left: -30%; margin-top: 50%; margin-bottom: 10%; background:linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));">
-				<h1 style="color: white; margin-left: -45%; font-size: 50px;">Skills</h1>
-				<p style="color: white; margin-left: -45%; margin-top: 3%; font-size: 30px;">- Python</p>
-				<p style="color: white; margin-left: -24.5%; font-size: 30px;">- C#, Visual Studio, Unity 3D</p>
-				<p style="color: white; margin-left: -15%; font-size: 30px;">- C++, Visual Studio, Unreal Engine 4</p>
-				<p style="color: white; margin-left: -24.8%; font-size: 30px;">- HTML, CSS, JS, BootStrap</p>
+				<h1 style="color: white; margin-left: -43%; font-size: 50px;">C++</h1>
+				<p style="color: white; margin-left: -32%; margin-top: 3%; font-size: 30px;">Mushroom Picker</p>
+				<p style="color: white; margin-left: -19%; font-size: 30px;">This game was created in UE4.</p>
+				<p style="color: white; margin-left: -3.5%; font-size: 30px;">C++ programming language was used for it.</p>
 			</div>
 		  </div>
 		  <div class="carousel-item" data-bs-interval="5000">
-			<img src="4.jpg" class="d-block w-100" alt="2" style="border-radius: 50px; height: 70vh">
+			<img src="8.jpg" class="d-block w-100" alt="2" style="border-radius: 50px; height: 70vh">
 			<div class="carousel-caption d-none d-md-block" style="margin-left: -30%; margin-top: 50%; margin-bottom: 10%; background:linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));">
-				<h1 style="color: white; margin-left: -22%; font-size: 50px;">Foreign languages</h1>
-				<p style="color: white; margin-left: -39.5%; margin-top: 3%; font-size: 30px;">- English (B2)</p>
-				<p style="color: white; margin-left: -40.2%; font-size: 30px;">- Polish (B1)</p>
-				<p style="color: white; margin-left: -33.8%; font-size: 30px;">- Russian (Native)</p>
-				<p style="color: white; margin-left: -30.5%; font-size: 30px;">- Belarusian (Native)</p>
+				<h1 style="color: white; margin-left: -43%; font-size: 50px;">C#</h1>
+				<p style="color: white; margin-left: -40%; margin-top: 3%; font-size: 30px;">Clicker</p>
+				<p style="color: white; margin-left: -15%; font-size: 30px;">This game was created in Unity.</p>
+				<p style="color: white; margin-left: -3%; font-size: 30px;">C# programming language was used for it.</p>
 			</div>
 		  </div>
 		  <div class="carousel-item" data-bs-interval="5000">
-			<img src="6.jpg" class="d-block w-100" alt="3" style="border-radius: 50px; height: 70vh">
+			<img src="9.jpg" class="d-block w-100" alt="3" style="border-radius: 50px; height: 70vh">
 			<div class="carousel-caption d-none d-md-block" style="margin-left: -30%; margin-top: 50%; margin-bottom: 10%; background:linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));">
-				<h1 style="color: white; margin-left: -28%; font-size: 50px;">Character traits</h1>
-				<p style="color: white; margin-left: -39%; margin-top: 3%; font-size: 30px;">- Hardworking</p>
-				<p style="color: white; margin-left: -40%; font-size: 30px;">- Fast learner</p>
-				<p style="color: white; margin-left: -40%; font-size: 30px;">- Easy going</p>
-				<p style="color: white; margin-left: -38.5%; font-size: 30px;">- Easy learner</p>
+				<h1 style="color: white; margin-left: -28%; font-size: 50px;">HTML+JS+CSS</h1>
+				<p style="color: white; margin-left: -49%; margin-top: 3%; font-size: 30px;">Site</p>
+				<p style="color: white; margin-left: -7%; font-size: 30px;">This site was created with Visual Studio Code.</p>
+				<p style="color: white; margin-left: -6%; font-size: 30px;">HTML, JS and CSS languages were used for it.</p>
 			</div>
 		  </div>
 		</div>
 		<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark2" data-bs-slide="prev" style="margin-left: -4%;">
-			<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-			<span class="visually-hidden">Previous</span>
 		</button>
 		<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark2" data-bs-slide="next" style="margin-right: -4%;">
-			<span class="carousel-control-next-icon" aria-hidden="true"></span>
-			<span class="visually-hidden">Next</span>
 		</button>
 	</div>
 
@@ -203,51 +193,17 @@
 				Say Hi!
 			</center>
 		</div>
-		<div class="carousel-indicators">
-		  <button type="button" data-bs-target="#carouselExampleDark3" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-		  <button type="button" data-bs-target="#carouselExampleDark3" data-bs-slide-to="1" aria-label="Slide 2"></button>
-		  <button type="button" data-bs-target="#carouselExampleDark3" data-bs-slide-to="2" aria-label="Slide 3"></button>
-		</div>
+
 		<div class="carousel-inner">
 		  <div class="carousel-item active" data-bs-interval="5000">
-			<img src="5.jpg" class="d-block w-100" alt="1" style=" border-radius: 50px; height: 70vh">
+			<img src="10.jpg" class="d-block w-100" alt="1" style=" border-radius: 50px; height: 70vh">
 			<div class="carousel-caption d-none d-md-block" style="margin-left: -30%; margin-top: 50%; margin-bottom: 10%; background:linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));">
-				<h1 style="color: white; margin-left: -45%; font-size: 50px;">Skills</h1>
-				<p style="color: white; margin-left: -45%; margin-top: 3%; font-size: 30px;">- Python</p>
-				<p style="color: white; margin-left: -24.5%; font-size: 30px;">- C#, Visual Studio, Unity 3D</p>
-				<p style="color: white; margin-left: -15%; font-size: 30px;">- C++, Visual Studio, Unreal Engine 4</p>
-				<p style="color: white; margin-left: -24.8%; font-size: 30px;">- HTML, CSS, JS, BootStrap</p>
-			</div>
-		  </div>
-		  <div class="carousel-item" data-bs-interval="5000">
-			<img src="4.jpg" class="d-block w-100" alt="2" style="border-radius: 50px; height: 70vh">
-			<div class="carousel-caption d-none d-md-block" style="margin-left: -30%; margin-top: 50%; margin-bottom: 10%; background:linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));">
-				<h1 style="color: white; margin-left: -22%; font-size: 50px;">Foreign languages</h1>
-				<p style="color: white; margin-left: -39.5%; margin-top: 3%; font-size: 30px;">- English (B2)</p>
-				<p style="color: white; margin-left: -40.2%; font-size: 30px;">- Polish (B1)</p>
-				<p style="color: white; margin-left: -33.8%; font-size: 30px;">- Russian (Native)</p>
-				<p style="color: white; margin-left: -30.5%; font-size: 30px;">- Belarusian (Native)</p>
-			</div>
-		  </div>
-		  <div class="carousel-item" data-bs-interval="5000">
-			<img src="6.jpg" class="d-block w-100" alt="3" style="border-radius: 50px; height: 70vh">
-			<div class="carousel-caption d-none d-md-block" style="margin-left: -30%; margin-top: 50%; margin-bottom: 10%; background:linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));">
-				<h1 style="color: white; margin-left: -28%; font-size: 50px;">Character traits</h1>
-				<p style="color: white; margin-left: -39%; margin-top: 3%; font-size: 30px;">- Hardworking</p>
-				<p style="color: white; margin-left: -40%; font-size: 30px;">- Fast learner</p>
-				<p style="color: white; margin-left: -40%; font-size: 30px;">- Easy going</p>
-				<p style="color: white; margin-left: -38.5%; font-size: 30px;">- Easy learner</p>
+				<h1 style="color: white; margin-left: 0%; font-size: 50px;">Gmail me with your questions!</h1>
+				<p style="color: white; margin-left: -45%; margin-top: 3%; font-size: 30px;"></p>
+				<p style="color: white; margin-left: -28%; font-size: 30px;"><a href="https://mail.google.com/mail/u/0/#inbox?compose=CllgCJfrswBrWBvHlmHXdLQJBljmXJtthcVFkdMqXscJGFzZjKNZgrwfZsRbtGLtwCWqXrSSFkg" style="color: white; text-decoration: none;">rusakvlad2@gmail.com</a></p>
 			</div>
 		  </div>
 		</div>
-		<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark3" data-bs-slide="prev" style="margin-left: -4%;">
-			<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-			<span class="visually-hidden">Previous</span>
-		</button>
-		<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark3" data-bs-slide="next" style="margin-right: -4%;">
-			<span class="carousel-control-next-icon" aria-hidden="true"></span>
-			<span class="visually-hidden">Next</span>
-		</button>
 	</div>
 	<footer class="bg-dark text-center text-white">
 		<!-- Grid container -->
@@ -255,16 +211,16 @@
 		  <!-- Section: Social media -->
 		  <section class="mb-4">
 			<!-- Twitter -->
-			<a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-twitter"></i></a>
+			<a class="btn btn-outline-light btn-floating m-1" href="https://twitter.com/ijzu5x3s3m" role="button"><i class="fab fa-twitter"></i></a>
 	  	  
 			<!-- Instagram -->
-			<a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-instagram"></i></a>
+			<a class="btn btn-outline-light btn-floating m-1" href="https://instagram.com/vrusak2004/" role="button"><i class="fab fa-instagram"></i></a>
 	  
 			<!-- Linkedin -->
-			<a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-linkedin-in"></i></a>
+			<a class="btn btn-outline-light btn-floating m-1" href="https://linkedin.com/in/vladislav-rusak-a57953223/" role="button"><i class="fab fa-linkedin-in"></i></a>
 	  
 			<!-- Github -->
-			<a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-github"></i></a>
+			<a class="btn btn-outline-light btn-floating m-1" href="https://github.com/V1ADDD" role="button"><i class="fab fa-github"></i></a>
 		  </section>
 		  <!-- Section: Social media -->
 		</div>
@@ -273,7 +229,7 @@
 		<!-- Copyright -->
 		<div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
 		  © 2022 Copyright:
-		  <a class="text-white">nevorujte.com</a>
+		  <a class="text-white">rusak.com</a>
 		</div>
 		<!-- Copyright -->
 	  </footer>
